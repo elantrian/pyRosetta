@@ -3,7 +3,9 @@
 
 * More information on [PyRosetta: A Python interface for the Rosetta molecular modeling suite](http://www.pyrosetta.org/)
 
-* My recent paper in [PLOS Genetics: "A high throughput mutagenic analysis of yeast sumo structure and function"](http://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1006612)
+* My recent paper in [PLOS Genetics: "A high throughput mutagenic analysis of yeast sumo structure and function"](http://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1006612) using PyRosetta! 
+
+<img src="https://github.com/elantrian/workingPyRosetta/blob/master/loopClose.png" alt="elantrian" width="400" align="middle">
 
 ----
 
