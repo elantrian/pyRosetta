@@ -1,0 +1,149 @@
+## protein standard
+patches/CtermProteinFull.txt
+patches/NtermProteinFull.txt
+patches/protein_cutpoint_upper.txt
+patches/protein_cutpoint_lower.txt
+
+## DNA standard
+patches/nucleic/dna/LowerDNA.txt
+patches/nucleic/dna/UpperDNA.txt
+patches/nucleic/dna/dna_cutpoint_upper.txt
+patches/nucleic/dna/dna_cutpoint_lower.txt
+patches/nucleic/dna/VirtualDNAPhosphate.txt
+
+## RNA standard
+patches/nucleic/rna/LowerRNA.txt
+patches/nucleic/rna/UpperRNA.txt
+patches/nucleic/rna/rna_cutpoint_lower.txt
+patches/nucleic/rna/rna_cutpoint_upper.txt
+patches/nucleic/rna/Virtual_Phosphate.txt
+patches/nucleic/rna/Virtual_O2prime_hydrogen.txt
+
+##################################################################################
+## Selected from command line (not patched in by default to save memory); see below.
+##################################################################################
+# Protein
+patches/RepulsiveOnly_fa.txt        # replonly
+patches/ShoveBB.txt                 # SHOVE_BB
+patches/VirtualBB.txt               # VIRTUAL_BB
+patches/VirtualProteinSideChain.txt # VIRTUAL_SIDE_CHAIN
+patches/N_acetylated.txt            # PEPTIDE_CAP
+patches/C_methylamidated.txt        # PEPTIDE_CAP
+
+# RNA
+patches/nucleic/rna/5prime_phosphate.txt # TERMINAL_PHOSPHATE
+patches/nucleic/rna/3prime_phosphate.txt # TERMINAL_PHOSPHATE
+patches/nucleic/rna/Virtual_Ribose.txt   # VIRTUAL_RIBOSE
+patches/nucleic/rna/Virtual_RNA_Residue.txt       # VIRTUAL_RNA_RESIDUE
+patches/nucleic/rna/Virtual_RNA_Residue_Upper.txt # VIRTUAL_RNA_RESIDUE
+
+# Special
+patches/SpecialRotamer.txt
+
+#################################################################################################
+# Instead of just uncommenting below, consider setting up a CMDLINE_SELECTOR in the patch file,
+#  and in your app, put in a line like this after init():
+#
+#  option[ OptionKeys::chemical::patch_selectors ].push_back( "SHOVE_BB" ); // CMDLINE_SELECTOR in ShoveBB.txt
+#
+# [or, more cumbersome for users, require a flag like "-patch_selectors SHOVE_BB".]
+# That will reduce the generic memory footprint that most apps will see.
+#
+#################################################################################################
+
+## protein
+#patches/Cterm_amidation.txt
+#patches/VirtualProteinResidue.txt
+#patches/VirtualNterm.txt
+
+## terminal connection patches
+#patches/CtermConnect.txt
+#patches/NtermConnect.txt
+
+##fpd
+#patches/CtermTruncation.txt
+#patches/NtermTruncation.txt
+
+##added by steven combs November 11 2010
+#patches/sc_orbitals.txt
+
+## RNA
+#patches/nucleic/rna/BulgeRNA.txt
+#patches/nucleic/rna/3prime_end_OH.txt
+#patches/nucleic/rna/5prime_end_OH.txt
+#patches/nucleic/rna/5prime_end_phosphate.txt
+#patches/nucleic/rna/Protonated_H1_Adenosine.txt
+#patches/nucleic/rna/Virtual_Backbone_Except_C1prime.txt
+
+## Added by David P. Nannemann 29 Nov 2012
+patches/PtermProteinFull.txt
+
+## The following were added by Andy M. Chen in June 2009
+##   for post-translational modifications
+patches/pro_hydroxylated_case1.txt
+patches/pro_hydroxylated_case2.txt
+patches/ser_phosphorylated.txt
+patches/thr_phosphorylated.txt
+patches/tyr_phosphorylated.txt
+patches/tyr_sulfated.txt
+patches/lys_monomethylated.txt
+patches/lys_dimethylated.txt
+patches/lys_trimethylated.txt
+patches/lys_acetylated.txt
+patches/glu_carboxylated.txt
+
+patches/cys_acetylated.txt
+patches/tyr_diiodinated.txt
+
+## The following were added by Andy M. Chen in July 2009
+##   for post-translational modifications
+##
+##Note: The histidine methylated patch is commented out for now, as it was discovered that
+##  Rosetta would try to patch HIS_D as well-- which obviously doesn't work
+##  since the hydrogen to be removed isn't there. And since there is no variant code
+##  added to HIS_D, I have no way of applying a patch to HIS without affecting HIS_D.
+##  The added methyl group otherwise works fine.
+##
+## Note (from rhiju): I added a TAUTOMER property to HIS_D which would allow its exclusion by the path
+##  but I didn't implement yet on his_methylated.
+##
+#patches/his_methylated.txt
+
+## patches for the MakeRotLib protocol
+patches/MethylatedProteinCterm.txt
+patches/AcetylatedProteinNterm.txt
+
+## peptoid patches
+patches/NtermPeptoidFull.txt
+patches/CtermPeptoidFull.txt
+patches/NtermCtermDipeptoid.txt
+patches/AcetylatedPeptoidNterm.txt
+
+## carbohydrate patches
+### termini
+patches/carbohydrates/lower_terminus.txt
+patches/carbohydrates/upper_terminus.txt
+### cutpoints
+patches/carbohydrates/cutpoint_lower.txt
+patches/carbohydrates/cutpoint_upper.txt
+### glycosylation/branching (requires -read_pdb_link_records and -enable_branching flags to patch)
+patches/carbohydrates/N-linked_glycosylation.txt
+patches/carbohydrates/O-linked_glycosylation.txt
+patches/carbohydrates/branch_lower_term.txt
+patches/carbohydrates/2-branch.txt
+patches/carbohydrates/3-branch.txt
+patches/carbohydrates/6-branch.txt
+### modifications
+patches/carbohydrates/2-amination.txt
+patches/carbohydrates/N-acetyl-2-amination.txt
+patches/carbohydrates/5-acetylation.txt
+
+## alternative backbones
+#patches/hbs_pre.txt
+#patches/hbs_post.txt
+
+#patches/oop_pre.txt
+#patches/oop_post.txt
+
+## repulsive backbone
+#patches/ReplsBB.txt

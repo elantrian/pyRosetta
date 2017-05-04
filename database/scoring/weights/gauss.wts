@@ -1,0 +1,11 @@
+# weights trained by optE
+# fixed params:
+# free params: fa_atr gauss rama fa_dun p_aa_pp sa
+fa_atr 1.587371
+gauss 0.534447
+rama 0.388523
+fa_dun 2.64898
+p_aa_pp 0.874598
+sa 0.02
+ref 1
+METHOD_WEIGHTS ref  -0.029 -0 -0.699 -0.654 1.652 -0.449 0.89 0.526 -0.749 0.226 0.328 -0.877 0.214 -0.834 -0.797 -0.492 -0.743 0.177 1.232 1.077
